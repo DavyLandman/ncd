@@ -67,7 +67,7 @@ def calculate_row(f):
       data[f2] = ''
   return data
 
-data = {} #{ f : { "file" : f } for f in files }
+data = {}
 
 
 def add_result(row):
