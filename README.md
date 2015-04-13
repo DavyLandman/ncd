@@ -2,6 +2,7 @@
 
 This python script calculates the [Normalize Compression Distance](https://en.wikipedia.org/wiki/Normalized_compression_distance) between all the files passed as argument.
 NCD can be used as a distance measure in hierarchical clustering.
+Since NCD gets slow quickly, I've at least parallized the calculation over the available cores. If more speed is required, there are publications that discuss an approach on dictionaries.
 
 ## Internals
 
@@ -34,4 +35,4 @@ Which can then be imported as a distance matrix in R:
 dst = as.dist(as.matrix(read.csv("results/calculated-ncds.csv", row.names=1)))
 ```
 
-
+The progress will be reported every 10 rows. However, since it is a distance matrix, the last row takes n times longer than the first row. More accurate progress calculation is possible, but I haven't yet spend time on that.
