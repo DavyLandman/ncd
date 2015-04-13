@@ -14,6 +14,16 @@ the compressor might be unsuited for your data.
 
 ## Usage
 
+Progress is reported on `stderr` results on `stdout`.
+
+If you pass:
+
+- 1 file: the `Z(a)` is returned
+- 2 files: `NCD(a,b)` is returned, without the surrounding table.
+- >2 files: a distance matrix is returned, only the lower half of the matrix is
+  filled.
+
+
 ```
 ./ncd.py data/*.csv > results/calculated-ncds.csv
 ```
